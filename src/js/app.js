@@ -1,7 +1,7 @@
 import BurgerMenu from './BurgerMenu.js';
 
-const isMobile = document.documentElement.clientWidth <= 768;
-const isTablet = document.documentElement.clientWidth <= 1100;
+const isMobile = document.documentElement.clientWidth <= 640;
+const isTablet = document.documentElement.clientWidth <= 1200;
 const isLaptop = document.documentElement.clientWidth <= 1440;
 const isDesktop = document.documentElement.clientWidth > 1440;
 

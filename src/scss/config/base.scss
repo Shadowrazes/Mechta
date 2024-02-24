@@ -145,7 +145,7 @@ textarea{
     font-weight: 400;
 
     &_huge{
-        color: $titleColor;
+        color: $textColor;
         font-size: 2.5em;
     }
 
@@ -203,8 +203,8 @@ textarea{
 }
 
 .btn-icon {
-    width: 1em;
-    height: 1em;
+    width: 2em;
+    height: 2em;
 }
 
 .slider {
