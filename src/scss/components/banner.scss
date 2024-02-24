@@ -1,0 +1,116 @@
+.banner {
+
+    &__container {
+        max-width: 1800px;
+    }
+
+    &__slider {
+    }
+
+    &__slider-wrapper {}
+
+    &__slider-container {}
+
+    &__slider-items {}
+
+    &__slider-item-container {
+        padding: 0px 20px;
+    }
+
+    &__slider-item {
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: end;
+        padding: 0px 150px;
+        border-radius: 30px;
+        height: 700px;
+    }
+
+    &__slider-item-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 10rem;
+    }
+
+    &__slider-item-title {
+        margin: 0;
+        color: $textColorLight;
+    }
+
+    &__slider-item-descr {
+        color: $textColorLight;
+    }
+
+    &__slider-item-btns {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    &__slider-item-btn {}
+
+    &__slider-navs {}
+
+    &__slider-nav-btn {
+        &_right {
+            right: 10%;
+        }
+    }
+
+    &__slider-dotnav {
+        transform: translateY(-80px);
+    }
+}
+
+@include media($tablet) {
+    .banner {
+        &__slider-item {
+            padding: 0px 50px;
+        }
+    
+        &__slider-item-wrapper {
+            margin-bottom: 10rem;
+        }
+    }
+}
+
+@include media($mobile) {
+    .banner {
+
+        &__slider-wrapper {
+            padding: 0;
+        }
+
+        &__slider-item-container {
+            padding: 0px 5px;
+        }
+
+        &__slider-item {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0px 20px;
+            height: 600px;
+        }
+    
+        &__slider-item-wrapper {
+            gap: 20px;
+            margin-bottom: 10rem;
+        }
+    
+        &__slider-item-btns {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        &__slider-nav-btn {
+            display: none;
+        }
+    
+        &__slider-dotnav {
+            transform: translateY(-80px);
+        }
+    }
+}

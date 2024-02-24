@@ -152,7 +152,7 @@ svg {
 
     &_huge{
         color: $textColor;
-        font-size: 4em;
+        font-size: 5em;
     }
 
     &_large{
@@ -242,6 +242,21 @@ svg {
         width: 85%;
         display: flex;
         align-items: center;
+    }
+
+    &__nav-btn {
+        width: 5rem;
+        height: 5rem;
+        display: flex;
+        color: $sliderBtnColor;
+        background: $btnBgColor;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+
+        svg {
+            fill: none;
+        }
     }
 }
 

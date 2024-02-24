@@ -1,1 +1,14 @@
 // Заголовки, общие БЄМ блоки и проче...
+
+.uk-dotnav>.uk-active>* {
+    transform: scale(1.3);
+    background-color: $baseColor;
+    border-color: transparent;
+}
+
+.uk-dotnav>*>* {
+    width: 15px;
+    height: 15px;
+    background-color: $btnBgColor;
+    border: none;
+}
