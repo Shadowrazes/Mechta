@@ -1,206 +1,109 @@
 .header {
-    z-index: 1005;
-    border-style: solid;
-    border-width: 0px 0px 1px 0px;
-    border-color: #E4E4E4;
-    background-color: #FFFFFF;
+    z-index: 1011;
+    color: $textColorLight;
+    border-bottom: 1px solid $borderColor;
+
+    &__bg {
+        background: linear-gradient(90.24deg, #DBBB85 0%, #B8914D 49.4%, #C9A464 100%);
+    }
 
     &__container {
-        max-width: 1400px;
+        max-width: 1700px;
     }
 
     &__top {
+        padding: 30px 0px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 15px;
     }
 
-    &__recall-btn {}
-
-    &__menu-list {
-        margin: 0;
-        padding-left: 0;
+    &__logo-wrapper {
+        flex: 0 0 30%;
         display: flex;
-        flex-direction: row;
-        gap: 10px;
-
-        li{
-            list-style-type: none;
-        }
+        gap: 30px;
+        align-items: center;
     }
 
-    &__menu-link {
-        color: $textColor;
-        font-family: 'TTNorms' !important;
+    &__logo {
     }
 
-    &__drop-menu-container {
-        padding: 10px;
-        background: #FFFFFFED;
-        border-radius: 15px;
-    }
-
-    &__drop-menu {
-        margin: 0;
-        margin-top: 0;
-        padding-left: 0;
-    }
-
-    &__drop-menu-item {
-        list-style-type: none;
-    }
-
-    &__drop-menu-link {
-        color: $textColor;
-
-        @include any-hover {
-            color: $textColor;
-            text-decoration: none;
-        }
-    }
-
-    &__logo-title {
-        font-family: 'Circe', sans-serif;
-        font-size: 2em !important;
-    }
-
-    &__logo-image {
-        width: 55px !important;
-        height: 55px !important;
-        flex: 0 0 55px;
-    }
-
-    &__bottom {
-        border-top: 1px solid #00000018;
-        margin-top: 1em;
-        padding-top: 1em;
-        padding-bottom: 1em;
-        background-color: white;
-    }
-
-    // &__menu {
-    //     display: flex;
-    //     justify-content: space-evenly;
-    //     align-items: center;
-    //     list-style: none;
-    //     margin: 0;
-    //     padding: 0;
-    // }
-
-    &__menu {
-        display: flex;
-        justify-content: space-between;
-        flex: 0 0 100%;
-    }
-
-    &__menu-link {
-        font-size: 1.3em !important;
-        min-height: auto !important;
-    }
-
-    &__dropdown {
-        display: flex;
-        justify-content: space-between;
-        gap: 50px;
-    }
-
-    &__dropdown-column {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    &__dropdown-title {
-        font-size: 2em;
-        font-weight: bold;
-        color: #000000AA !important;
-        &:hover {
-            text-decoration: underline !important;
-        }
-    }
-
-    &__dropdown-link {
+    &__desr {
         font-size: 1.3em;
-        color: inherit;
-        &:hover {
-            text-decoration: underline !important;
-        }
-    }
-
-    &__burger-btn {
-        flex-direction: column;
-        gap: 4px;
-        background-color: $btnBgColor;
-        flex: 0 0 40px;
-        height: 40px;
-        padding: 10px;
-    }
-
-    &__burger-line {
-        width: 20px;
-        height: 2px;
-        background-color: white;
-    }
-
-    &__mobile-recall-btn {
-        height: 40px;
-        padding: 10px 15px;
-    }
-
-    &__mobile-nav-wrapper {
-        display: none;
-        gap: 5px;
-    }
-
-    &__burger-close {
-        top: 10px;
-        right: 10px;
-    }
-
-    &__burger-menu-link {
-        font-size: 1.2rem;
-    }
-}
-
-.icon-card {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    &__image {
-        width: 40px;
-        height: 40px;
     }
 
     &__content {
         display: flex;
-        flex-direction: column;
+        align-items: center;
+        gap: 50px;
     }
 
-    &__title {
-        text-align-last: left;
-        color: $titleColor;
-        font-size: 1.7em;
-    }
-
-    &__descr {
-        text-align-last: left;
-        font-size: 1.35em;
-    }
-
-    &__logo-wrapper {
+    &__btns-wrapper {
         display: flex;
+        gap: 15px;
+
+        svg {
+            color: $baseColor;
+            fill: none;
+        }
+    }
+
+    &__btn {
+        font-size: 1.5rem;
+    }
+
+    &__social-btn {
+        padding: 10px;
+    }
+
+    &__social-icon {
+        
+    }
+
+    &__map-btn {}
+
+    &__map-btn-icon {}
+
+    &__map-btn-text {}
+
+
+    &__contacts-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    &__contacts-phone {
+        color: $textColorLight;
+    }
+
+    &__contacts-town {
+        color: $textColorLight;
+    }
+
+    &__menu-container {
+        max-width: 1700px;
+        padding: 20px 0px;
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__menu-link {
+        color: $textColorDark;
     }
 }
 
 .burger{
     display: none;
+
     &__button {
         position: relative;
         width: 40px;
         height: 40px;
-        background: #000000;
+        background: $bodyColor;
         border-radius: 50%;
         padding: 10px;
         border: 0;
@@ -232,7 +135,7 @@
         height: 3px;
         width: 20px;
         border-radius: 10px;
-        background: #BABABA;
+        background: $baseColor;
         transition: .3s;
         &:nth-child(1) {
             top: calc(50% - 6px);
@@ -244,40 +147,52 @@
 }
 
 .burger-menu {
+    svg {
+        fill: none;
+    }
+
     &__items {
         display: flex;
         flex-direction: column;
         text-transform: uppercase;
         padding: 100px 20px 20px;
         margin: 0;
-        background: #031428E4;
+        background: $bodyColor;
         margin-bottom: auto;
     }
 
     &__item {
+        display: flex;
+        justify-content: center;
         padding: 10px 0px;
-        border-bottom: 1px solid #000000;
+        border-bottom: 1px solid $borderColor;
         list-style-type: none;
-    }
 
-    &__link {
-        font-weight: 700;
-        color: $btnColor;
-
-        &:hover {
-            color: $btnHoverColor;
-            text-decoration: none;
+        &_text {
+            text-align: center;
         }
     }
 
-    &__drop-menu-container{
-        padding: 10px;
-        background: #031428C4;
+    &__btn {
+        width: 100%;
     }
 
-    &__drop-menu-link{
-        color: $btnColor;
-        font-weight: 700;
+    &__link {
+        color: $textColorDark;
+    }
+
+    &__text {
+        color: $textColorDark;
+        font-size: 1.5rem;
+    }
+
+    &__social-btns {
+        
+        justify-content: space-between;
+    }
+
+    .header__social-btn {
+        flex: 0 0 45%;
     }
 }
 
@@ -287,69 +202,33 @@
     }
 
     .header {
-        &__save-icon {
+        &__top {
+            padding: 20px 0px;
+            gap: 20px;
+        }
+    
+        &__logo-wrapper {
+            flex: unset;
+        }
+    
+        &__desr {
+            display: none;
+        }
+    
+        &__btns-wrapper {
             display: none;
         }
 
-        &__logo-image {
-            height: 35px !important;
-        }
-
-        &__container {
-            padding: 0 !important;
-        }
-
-        &__dropdown {
-            gap: 10px;
+        &__contacts-wrapper {
+            align-items: center;
         }
 
         &__menu-container {
-            padding: 0 10px !important;
+            display: none;
         }
     }
-
-    .icon-card {
-        &__logo-wrapper {
-            flex: 0 0 35px;
-        }
-    }
-    
 }
 
 @include media($mobile){
-    .header {
-        padding: 10px 15px;
-        &__top {
-            gap: 5px;
-            padding: 0;
-        }
-
-        &__phone-icon {
-            display: none;
-        }
-
-        &__bottom {
-            display: none;
-        }
-
-        &__recall-btn {
-            display: none;
-        }
-
-        &__mobile-nav-wrapper {
-            display: flex;
-        }
-
-        &__logo-title {
-            font-size: 1.5em !important;
-        }
-
-        &__logo-descr {
-            font-size: 1.2em !important;
-        }
-
-        &__logo-icon {
-            gap: 5px;
-        }
-    }
+    
 }

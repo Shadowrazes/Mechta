@@ -206,8 +206,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Прогрузка карты при скролле
     // LoadMapOnScroll()
 
-    // if(isTablet) {
-    //     const burgerNode = document.querySelector('.burger');
-    //     new BurgerMenu(burgerNode);
-    // }
+    if(isTablet) {
+        const burgerNode = document.querySelector('.burger');
+        new BurgerMenu(burgerNode);
+    }
 })
