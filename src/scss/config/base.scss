@@ -15,13 +15,11 @@ body {
     background-color: $bodyColor;
     overflow-y: hidden;
     font-family: 'TTNorms';
-    line-height: 1.5;
+    line-height: 1.3;
 
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-
-    
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -92,6 +90,10 @@ textarea{
     }
 }
 
+svg {
+    flex-shrink: 0;
+}
+
 .main {
     flex-grow: 1;
 }
@@ -128,11 +130,15 @@ textarea{
 }
 
 .uk-slidenav {
-    color: #000000;
+    color: $sliderBtnColor;
 }
 
 .uk-lightbox-button {
-    color: #FFFFFF;
+    color: $lightboxBtnColor;
+}
+
+.uk-modal-full {
+    background: $burgerOverlayBg;
 }
 
 .section-title {
@@ -156,7 +162,7 @@ textarea{
     
     &_small{
         color: $textColor;
-        font-size: 1.75em;
+        font-size: 1.5em;
     }
     
     &_bold{
@@ -173,7 +179,7 @@ textarea{
     transition: .3s;
     color: $btnColor;
     background: $btnBgColor;
-    font-size: 2em;
+    font-size: 1.7em;
     padding: 1rem 2rem;
     border-radius: 10px;
     border: none;
@@ -199,6 +205,10 @@ textarea{
         background: linear-gradient(90.24deg, #DBBB85 0%, #B8914D 49.4%, #C9A464 100%),
                     linear-gradient(91.39deg, #DBBB85 -71.74%, #A3844F 56.82%, #B8914D 188.51%),
                     linear-gradient(0deg, #B8914D, #B8914D);
+    }
+
+    &_wide {
+        min-width: 235px;
     }
 }
 
