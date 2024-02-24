@@ -1,146 +1,108 @@
-.footer-links {
-    background: linear-gradient(0deg, #FFFFFFBB, #FFFFFFBB), 
-                url(@img/backgrounds/background-abstract-min.jpg) center/cover;
 
-    &__container {
-        display: flex;
-        justify-content: space-between;
-        max-width: 1400px;
-        padding: 40px 0px;
-    }
-
-    &__column {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 10px;
-    }
-
-    &__recall-btn {
-        justify-content: space-between;
-    }
-}
 
 .footer {
-    padding: 15px;
+
+    background: $frameColor;
 
     &__container {
-        display: flex;
-        justify-content: space-between;
-        max-width: 1400px;
+        padding: 40px 15px 40px 15px;
+        position: relative;
     }
+    &__block {
 
+        &_right {
+            padding: 0 35% 0 0;
+        }
+    }
+    &__social{
+        .btn{
+            padding: 1rem;
+        }
+        .btn-icon{
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+    &__buttons{
+        .btn{
+            width: 230px;
+        }
+        .btn-icon{
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+    }
+    &__block{
+        z-index: 1;
+        position: relative;
+    }
+    &__row {
+
+        display: flex;
+        flex-direction: row;
+
+        &_button {
+            gap: 15px;
+        }
+        &_parent {
+            gap: 80px;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+    }
     &__column {
+
         display: flex;
         flex-direction: column;
-        flex: 0 0 25%;
-        gap: 10px;
-    }
 
-    &__payment-column {
-        flex: 0 0 35%;
-        text-align: center;
-    }
-
-    &__warning-column {
-        text-align: right;
-    }
-
-    &__dev-link {
-        color: $btnColor;
-        background: $textColor;
-        padding: 0 5px;
-
-        @include any-hover {
-            color: $btnColor;
+        &_parent {
+            justify-content: space-between;
         }
-    }
 
-    &__payment-images {
-        display: flex;
-        gap: 15px;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    &__payment-img {
-        width: 70px;
-        height: fit-content;
-    }
-
-    &__warning-age-img {
-        width: 1.5em;
-    }
-}
-
-.callback-popup{
-    z-index: 1050;
-
-    &__frame {
-        border-radius: 5px;
-        width: 700px;
-    }
-
-    &__form {
-    }
-
-    &__title {
-        
-    }
-
-    &__content {
-
-    }
-
-    &__phone-input {
-        border-radius: 5px;
-    }
-
-    &__success{
-        z-index: 1050;
-    }
-}
-
-@include media($tablet){
-    .footer-links {
-        &__container {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 15px;
-            padding: 40px 0px;
-        }
-    
-        &__column {
-            gap: 10px;
-        }
-    }
-
-    .footer {
-        &__container {
-            flex-direction: column;
-            align-items: center;
+        &_up {
             gap: 20px;
         }
+        &_right {
+            gap: 10px;
+        }
+        &_down {
+            margin-top: 70px;
+            gap: 15px;
+        }
+    }
 
-        &__column {
-            text-align: center;
+    &__svg {
+        color: $frameColor;
+        &_background{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 0;
         }
-    
-        &__payment-img {
-            width: 15%;
-        }
+    }
+
+}
+@media(max-width: 850px) {
+    .footer__row_parent{
+        flex-direction: column;
+        margin-top: 20px;
+        gap: 40px;
+    }
+    .footer__column_down{
+        margin-top: 20px;
+    }
+    .footer__buttons{
+        flex-direction: column;
+    }
+    .footer__block_right{
+        padding: 0;
     }
 }
-
-@include media($mobile){
-    .footer {
-        
-    }
-
-    .callback-popup{
-        &__title {
-            font-size: 1.9em;
-        }
+@media(max-width: 640px) {
+    .footer__title {
+        font-size: 3rem;
     }
 }

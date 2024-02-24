@@ -1,0 +1,47 @@
+.purchase {
+    .btn{
+        font-size: inherit;
+    }
+    &__container {
+    }
+
+
+    &__title {
+        margin: 0;
+
+        &_accent {
+        }
+    }
+
+    &__slider {
+        margin-top: 30px;
+        width: 100%;
+    }
+    &__item-wrapper{
+        position: relative;
+    }
+    &__slider-wrapper {
+    }
+    &__slider-container {
+    }
+    &__slider-items {
+    }
+    &__slider-item {
+    }
+    &__slider-img {
+        pointer-events: none;
+    }
+    &__slide-button {
+        position: absolute;
+        bottom: 10%;
+        width: 75%;
+        padding: 2rem;
+        
+    }
+    &__slider-navs {
+    }
+    &__slider-nav-btn {
+    }
+}
+
+
