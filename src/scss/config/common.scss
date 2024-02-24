@@ -12,3 +12,21 @@
     background-color: $btnBgColor;
     border: none;
 }
+
+.text {
+    &_accent {
+        color: $baseColor;
+    }
+
+    &_white {
+        color: $white;
+    }
+
+    &_min {
+        font-size: 1.3rem;
+    }
+
+    &_minheight {
+        line-height: 1.2;
+    }
+}
