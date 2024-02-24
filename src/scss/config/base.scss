@@ -31,15 +31,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 5.5rem;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 4rem;
 }
 
 h3, h4, h5, h6 {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 p {
@@ -141,22 +141,22 @@ textarea{
 
 .text{
     color: $textColor;
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: 400;
 
     &_huge{
         color: $textColor;
-        font-size: 2.5em;
+        font-size: 4em;
     }
 
     &_large{
         color: $textColor;
-        font-size: 1.75em;
+        font-size: 3em;
     }
     
     &_small{
         color: $textColor;
-        font-size: 1.25em;
+        font-size: 1.75em;
     }
     
     &_bold{
@@ -173,7 +173,7 @@ textarea{
     transition: .3s;
     color: $btnColor;
     background: $btnBgColor;
-    font-size: 1.7em;
+    font-size: 2em;
     padding: 1rem 2rem;
     border-radius: 10px;
     border: none;
@@ -242,6 +242,6 @@ textarea{
 
 @include media($mobile) {
     html {
-        font-size: 10px;
+        font-size: 8px;
     }
 }
