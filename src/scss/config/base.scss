@@ -1,0 +1,247 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 12px;
+}
+
+body {
+    background-color: $bodyColor;
+    overflow-y: hidden;
+    font-family: 'TTNorms';
+    line-height: 1.5;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $titleColor;
+    font-weight: bold;
+    font-family: 'TTNorms';
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3, h4, h5, h6 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+a{
+    color: $linkColor;
+    transition: .3s;
+
+    @include any-hover {
+        color: $btnHoverColor;
+    }
+}
+
+a[href*="tel:"] {
+    white-space: nowrap;
+}
+
+section{
+    margin-top: 4rem;
+    position: relative;
+}
+
+input{
+    &:focus{
+        border-color: $btnHoverColor;
+    }
+
+    &:focus-visible {
+        outline: none;
+        text-indent: 5px;
+    }
+}
+
+select{
+    &:focus{
+        border-color: $btnHoverColor;
+    }
+}
+
+textarea{
+    &:focus{
+        border-color: $btnHoverColor;
+    }
+
+    &:focus-visible {
+        outline: none;
+        text-indent: 5px;
+    }
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.container {
+    max-width: 1600px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+
+    &_vertical {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+.uk-input, .uk-select, .uk-textarea {
+    transition: 0.3s;
+    font-size: 1.5em;
+}
+
+.uk-accordion-content {
+    margin: 0;
+}
+
+.uk-accordion-title::before {
+    width: 1em;
+    height: 1em;
+    background-size: 100%;
+}
+
+.uk-slidenav {
+    color: #000000;
+}
+
+.uk-lightbox-button {
+    color: #FFFFFF;
+}
+
+.section-title {
+    text-align: center;
+}
+
+.text{
+    color: $textColor;
+    font-size: 1.5em;
+    font-weight: 400;
+
+    &_huge{
+        color: $titleColor;
+        font-size: 2.5em;
+    }
+
+    &_large{
+        color: $textColor;
+        font-size: 1.75em;
+    }
+    
+    &_small{
+        color: $textColor;
+        font-size: 1.25em;
+    }
+    
+    &_bold{
+        font-weight: 700;
+    }
+
+    &_light_bold{
+        font-weight: 500;
+    }
+}
+
+.btn{
+    cursor: pointer;
+    transition: .3s;
+    color: $btnColor;
+    background: $btnBgColor;
+    font-size: 1.7em;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+
+    @include any-hover {
+        text-decoration: none;
+        color: $btnHoverColor;
+        background: $btnHoverBgColor;
+    }
+
+    &:focus {
+        outline: none;
+        background: $textColor;
+    }
+
+    &_dark {
+        color: #FFFFFF;
+        background: linear-gradient(90.24deg, #DBBB85 0%, #B8914D 49.4%, #C9A464 100%),
+                    linear-gradient(91.39deg, #DBBB85 -71.74%, #A3844F 56.82%, #B8914D 188.51%),
+                    linear-gradient(0deg, #B8914D, #B8914D);
+    }
+}
+
+.btn-icon {
+    width: 1em;
+    height: 1em;
+}
+
+.slider {
+    &_centered {
+        img {
+            transition: height .2s;
+            height: 80%;
+        }
+    
+        &__item_center img {
+            height: 100% !important;
+        }
+    }
+
+    &__wrapper {
+        padding: 20px;
+    }
+    
+    &__item {
+        display: flex;
+        justify-content: center;
+    }
+    
+    &__item-wrapper {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@include media($tablet) {
+    html {
+        font-size: 11px;
+    }
+}
+
+@include media($mobile) {
+    html {
+        font-size: 10px;
+    }
+}
