@@ -1,0 +1,54 @@
+.hero {
+    
+    &__container {
+        
+    }
+
+    &__content {
+        border-radius: 30px;
+        background: url(@img/backgrounds/yard_area.jpg) no-repeat center/cover;
+        padding: 100px;
+        min-height: 768px;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    &__logo-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__logo {
+        width: 70%;
+        height: 70%;
+    }
+
+    &__descr {
+        width: 90%;
+        color: $textColorLight;
+    }
+}
+
+@include media($mobile) {
+    .hero {
+        &__content {
+            padding: 50px 25px;
+            min-height: 500px;
+        }
+    
+        &__logo {
+            width: 100%;
+            height: 100%;
+        }
+    
+        &__descr {
+            width: 100%;
+        }
+    }
+}
