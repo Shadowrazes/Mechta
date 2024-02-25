@@ -30,3 +30,8 @@
         line-height: 1.2;
     }
 }
+
+.button__noactive{
+    pointer-events: none;
+    opacity: 0.5;
+}

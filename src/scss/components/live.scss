@@ -1,0 +1,38 @@
+.live {
+
+    &__container {
+
+    }
+
+    &__content {
+        background: url(../images/live/back-live.jpg) no-repeat center/cover;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        min-height: 670px;
+        justify-content: center;
+        align-items: center;
+        padding: 0 15px;
+    }
+    &__accent{
+        text-align: center;
+        width: 80%;
+    }
+    &__title {
+        text-align: center;
+    }
+
+    &__button {
+        margin-top: 70px;
+        padding: 30px 90px;
+    }
+}
+@media(max-width: 640px) {
+    .live {
+
+        &__button {
+            font-size: 2rem;
+            padding: 20px 45px;
+        }
+    }
+}

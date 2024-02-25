@@ -194,10 +194,25 @@ function InitCenteredSliders(){
     };
 }
 
+function CheckCheckBox(){
+	let checks = document.querySelectorAll('.checkbox-form');
+	checks.forEach((checkbox) =>{
+		let form = checkbox.closest('form');
+		let button = form.querySelector('button[type="submit"]');
+		if (form && button)
+		{
+			button.classList.toggle('button__noactive');
+			checkbox.addEventListener('click', (event) => {
+				button.classList.toggle('button__noactive');
+			});
+		}
+	});
+}
+
 document.addEventListener('DOMContentLoaded', (event) => {
     CallbackFormInit();
     InitCenteredSliders();
-
+	CheckCheckBox();
     // particlesJS.load('particles-slider', 'static/ParticlesJSON/GreenHexagons.json');
 
     // Содержание статьи по заголовкам

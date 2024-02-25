@@ -1,0 +1,129 @@
+.main-form {
+
+    &__container {
+    }
+
+    &__content{
+        background: $frameColor;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 70px 0px 40px 0px;
+        border-radius: 30px;
+    }
+    &__svg {
+        color: $backSvgcColor;
+        &_background{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 0;
+            width: 60%;
+        }
+    }
+
+    &__title {
+        position: relative;
+        z-index: 1;
+        margin: 0px;
+        text-align: center;
+        padding: 0px 15px;
+    }
+
+    &__form {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        padding: 0px 200px;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    &__row {
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        &_min{
+            gap: 10px;
+        }
+    }
+    &__input{
+        width: 100%;
+        font-size: 1.7rem;
+        padding: 30px;
+    }
+    &__name-input {
+        border-radius: 10px;
+    }
+
+    &__phone-input {
+        border-radius: 10px;
+    }
+
+    &__submit-btn {
+        padding: 20px;
+        width: 80%;
+    }
+}
+
+@media(max-width: 1440px) {
+    .main-form {
+
+        &__form {
+            padding: 0px 120px;
+        }
+    }
+}
+@media(max-width: 1200px) {
+    .main-form {
+
+        &__form {
+            padding: 0px 15px;
+        }
+        &__row{
+            gap: 15px;
+        }
+    }
+    .main-form__input {
+        width: 100%;
+        font-size: 1.2rem;
+        padding: 30px 20px;
+    }
+    .main-form__submit-btn{
+        padding: 20px 5px;
+        width: 100%;
+    }
+}
+@media(max-width: 640px) {
+    .main-form {
+
+        &__form {
+            padding: 0px 15px;
+        }
+        &__row{
+            flex-direction: column;
+            &_min{
+                flex-direction: row;
+            }
+        }
+    }
+    .main-form__input {
+        width: 100%;
+        font-size: 1.7rem;
+        padding: 30px;
+    }
+    .main-form__submit-btn{
+        padding: 20px 5px;
+    }
+    .main-form__svg_background {
+        width: 100%;
+    }
+}
