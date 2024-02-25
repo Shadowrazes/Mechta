@@ -1,0 +1,87 @@
+.promo {
+    
+    &__container {
+    }
+
+    &__content {
+        border-radius: 30px;
+        padding: 50px;
+        background: url(@img/backgrounds/yard.jpg) no-repeat center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        border-radius: 30px;
+        border: 3px solid $borderColorLight;
+        flex: 0 0 45%;
+        padding: 60px;
+
+        &_cropped {
+            clip-path: polygon(0 0, 100% 0, 100% 93%, 90% 99%, 50% 99%, 50% 100%, 0 100%);
+            margin-right: -3px;
+        }
+    }
+
+    &__card-title {
+        color: $textColorLight;
+    }
+
+    &__card-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        margin-top: 70%;
+    }
+
+    &__card-price {
+        color: $textColorLight;
+    }
+
+    &__card-btn {}
+
+    &__card-btn-img {}
+}
+
+@include media($tablet) {
+    .promo {
+        &__content {
+            padding: 20px;
+        }
+    
+        &__card {
+            flex: 0 0 50%;
+            padding: 25px;
+        }
+    }
+}
+
+@include media($mobile) {
+    .promo {
+        &__content {
+            flex-direction: column;
+            padding: 20px;
+        }
+    
+        &__card {
+            flex: 0 0 100%;
+            padding: 35px;
+    
+            &_cropped {
+                margin-right: unset;
+                margin-bottom: -3px;
+                clip-path: polygon(0 0, 100% 0, 100% 50%, 92% 50%, 92% 100%, 0 100%);
+            }
+        }
+    
+        &__card-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-top: 50%;
+        }
+    }
+}
