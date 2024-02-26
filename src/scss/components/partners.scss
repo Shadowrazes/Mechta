@@ -1,0 +1,57 @@
+.partners {
+
+    &__container {}
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px;
+        background: $cardColor;
+        flex: 0 0 48%;
+    }
+
+    &__logo-wrapper {
+        
+    }
+
+    &__logo-img {
+        object-fit: contain;
+        max-height: 50px;
+    }
+
+    &__info-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__card-title {
+        margin: 0;
+    }
+
+    &__card-descr {}
+
+    &__card-btn {
+        padding: 2rem 2rem;
+    }
+}
+
+@include media($tablet) {
+    
+}
+
+@include media($mobile) {
+    .partners {
+        &__card {
+            flex: 0 0 100%;
+        }
+    }
+}
