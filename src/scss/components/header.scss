@@ -44,7 +44,6 @@
 
         svg {
             color: $baseColor;
-            fill: none;
         }
     }
 
@@ -147,10 +146,6 @@
 }
 
 .burger-menu {
-    svg {
-        fill: none;
-    }
-
     &__items {
         display: flex;
         flex-direction: column;

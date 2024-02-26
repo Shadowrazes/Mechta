@@ -189,6 +189,10 @@ svg {
     text-align: center;
     gap: 20px;
 
+    svg {
+        fill: none;
+    }
+
     @include any-hover {
         text-decoration: none;
         color: $btnHoverColor;
