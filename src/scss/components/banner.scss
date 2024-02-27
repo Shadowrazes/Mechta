@@ -5,6 +5,15 @@
     }
 
     &__slider {
+        overflow: hidden;
+        transition: .5s;
+        &:hover {
+            .banner__slider-nav-btn {
+                &_right {
+                    right: 10%;
+                }
+            }
+        }
     }
 
     &__slider-wrapper {}
@@ -54,8 +63,9 @@
     &__slider-navs {}
 
     &__slider-nav-btn {
+
         &_right {
-            right: 10%;
+            right: -5%;
         }
     }
 
@@ -104,13 +114,9 @@
             flex-direction: column;
             align-items: center;
         }
-    
+
         &__slider-nav-btn {
             display: none;
-        }
-    
-        &__slider-dotnav {
-            transform: translateY(-80px);
         }
     }
 }
