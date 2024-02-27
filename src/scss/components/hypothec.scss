@@ -1,0 +1,177 @@
+.hypothec {
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+
+        &_accent {
+        }
+    }
+
+    &__calculator {
+        display: flex;
+        gap: 35px;
+        width: 50%;
+        margin-top: 50px;
+    }
+    &__calculator-block-title{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__calculator-block {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+    &__input-text-percent{
+        pointer-events: none;
+        width: fit-content;
+        width: 46px;
+        border: none;
+        color: $baseColor;
+    }
+    &__input-text {
+        padding: 15px 20px;
+        border: none;
+        background: $backAccentColor;
+        border-radius: 8px;
+    }
+
+    &__input-text-price {
+    }
+
+    &__input-price {
+    }
+
+    &__input-text-contribution {
+    }
+
+    &__input-contribution {
+    }
+
+    &__input-text-term {
+    }
+
+    &__input-term {
+    }
+
+    &__banks {
+        margin-top: 75px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+    }
+
+    &__bank {
+        background: $cardColor;
+        display: flex;
+        flex-direction: column;
+        padding: 25px;
+        align-items: center;
+        border-radius: 10px;
+    }
+    &__bank-content{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    &__bank-block-up {
+        display: flex;
+        gap: 90px;
+    }
+
+    &__bank-percent {
+    }
+
+    &__bank-price {
+    }
+
+    &__bank-img-wrapper {
+
+    }
+
+    &__bank-img {
+    }
+
+
+
+    &__block-button-text{
+        color: $textAccentDark;
+    }
+    &__block-button{
+        display: flex;
+        gap: 20px;
+        align-items: end;
+        margin-top: 50px;
+    }
+    &__button{
+        padding: 25px;
+        width: fit-content;
+    }
+}
+@media(max-width: 1200px) {
+    .hypothec {
+
+        &__bank-block-up {
+
+            gap: 30px;
+        }
+    }
+}
+@media(max-width: 960px) {
+    .hypothec {
+
+        &__bank-block-up {
+
+            gap: 30px;
+        }
+        &__calculator {
+            flex-direction: column;
+            width: 100%;
+            padding: 0px 10px
+        }
+        &__banks {
+            margin-top: 50px;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        &__calculator-block-title{
+            font-size: 1.5rem;
+        }
+    }
+}
+@media(max-width: 640px) {
+    .hypothec {
+
+        &__bank-block-up {
+            gap: 10px;
+            flex-direction: column;
+        }
+        &__bank{
+            padding: 20px 10px;
+        }
+        &__calculator-block-title{
+            font-size: 2rem;
+        }
+        &__input-text{
+            font-size: 2rem;
+        }
+        
+
+        &__block-button-text{
+            color: $textAccentDark;
+        }
+        &__block-button{
+            flex-direction: column;
+            align-items: center;
+        }
+        &__button{
+            padding: 25px;
+            width: fit-content;
+        }
+    }
+}
