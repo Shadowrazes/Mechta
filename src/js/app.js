@@ -208,11 +208,31 @@ function CheckCheckBox(){
 		}
 	});
 }
-
+function LayoutDetailDropDown(){
+	let form = document.querySelector('.layout-detail__form');
+	if (form)
+	{
+		let select = document.querySelector('.layout-detail__select');
+		let selectSize = select.options.length;
+		let svg = document.querySelector('.layout-detail__svg');
+		form.addEventListener('click', (event) => {
+			//button.classList.toggle('button__noactive');
+			//select.click();
+			//select.focus();
+			//select.size = selectSize ;
+			//form.classList.toggle('layout-detail__form_active')
+			//svg.classList.toggle('layout-detail__svg_active')
+		});
+		select.addEventListener('blur', () => {
+			select.size = 1;
+		  })
+	}
+}
 document.addEventListener('DOMContentLoaded', (event) => {
     CallbackFormInit();
     InitCenteredSliders();
 	CheckCheckBox();
+	//LayoutDetailDropDown();
     // particlesJS.load('particles-slider', 'static/ParticlesJSON/GreenHexagons.json');
 
     // Содержание статьи по заголовкам
