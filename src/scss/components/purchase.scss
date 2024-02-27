@@ -89,6 +89,9 @@
         .text{
             font-size: 2em;
         }
+        &__slide-text{
+            width: 330px;
+        }
     }
 }
 @media(max-width: 640px) {
@@ -100,6 +103,15 @@
             .text_min{
                 font-size: 2rem;
             }
+        }
+
+    }
+}
+@media(max-width: 460px) {
+    .purchase {
+        
+        &__slide-text{
+            width: 75%;
         }
 
     }

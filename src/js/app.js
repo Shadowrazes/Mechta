@@ -283,7 +283,7 @@ function AddRangeSliders() {
 		const percent = parseFloat(bank.querySelector('.hypothec__bank-percent').textContent);
 		const monthlyRate = percent / 12 / 100;
 		
-		const loanAmount = ui_slider_price.get() - ui_slider_contribution.get();
+		const loanAmount = ui_slider_price.get() - ((ui_slider_price.get() * ui_slider_contribution.get()) / 100);
 		const term = ui_slider_term.get() * 12;
 		const rate =  (1 + monthlyRate) ** term;
 
