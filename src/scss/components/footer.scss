@@ -85,6 +85,55 @@
     }
 
 }
+
+.callback-popup {
+
+    &__frame {
+        border-radius: 30px;
+        background: $frameColor;
+    }
+
+    &__header-wrapper {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        background: $frameColor;
+    }
+
+    &__btn-wrapper {
+        background: $frameColor;
+    }
+
+    &__checkbox-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__form {}
+
+    &__title {
+        font-size: 2.5em;
+    }
+
+    &__content {
+    }
+
+    &__descr-wrapper {
+        display: flex;
+    }
+
+    &__descr {
+        text-align: center;
+    }
+
+    &__phone-input {}
+
+    &__submit-btn {}
+
+    &__success {}
+}
+
 @media(max-width: 850px) {
     .footer__row_parent{
         flex-direction: column;
