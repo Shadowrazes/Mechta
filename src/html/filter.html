@@ -1,0 +1,52 @@
+<section class="layouts">
+    <div class="layouts__container container">
+        <h2 class="section-title layouts__title">Популярные планировки квартир</h2>
+
+        <div class="layouts__filter">
+            <h3 class="layouts__filter-title">Примените фильтры для лучшего поиска</h3>
+            <form class="layouts__filter-form">
+                <div class="layouts__filter-wrapper">
+                    <div class="layouts__filter-item-wrapper">
+                        <span class="text_min text_bold layouts__filter-item-title">Стоимость, ₽</span>
+                        <div class="layouts__filter-input-wrapper">
+                            <input id="price-filter-from" disabled class="text_small layouts__filter-input-text layouts__filter-input-text_price" type="text">
+                            <input id="price-filter-to" disabled class="text_small layouts__filter-input-text layouts__filter-input-text_price" type="text">
+                        </div>
+                        <div class="layouts__filter-input-range layouts__filter-input-range_price"></div>
+                    </div>
+                    <div class="layouts__filter-item-wrapper">
+                        <span class="text_min text_bold layouts__filter-item-title">Площадь, м²</span>
+                        <div class="layouts__filter-input-wrapper">
+                            <input id="area-filter-from" disabled class="text_small layouts__filter-input-text layouts__filter-input-text_area" type="text">
+                            <input id="area-filter-to" disabled class="text_small layouts__filter-input-text layouts__filter-input-text_area" type="text">
+                        </div>
+                        <div class="layouts__filter-input-range layouts__filter-input-range_area"></div>
+                    </div>
+                    <div class="layouts__filter-item-wrapper">
+                        <span class="text_min text_bold layouts__filter-item-title">Количество комнат</span>
+                        <div class="layouts__filter-floor-wrapper">
+                            <div class="layouts__filter-item-floor">
+                                <input id="floor-1" type="radio" name="floor" value="1" checked>
+                                <label class="text_small" for="floor-1">1</label>
+                            </div>
+                             
+                            <div class="layouts__filter-item-floor">
+                                <input id="floor-2" type="radio" name="floor" value="2">
+                                <label class="text_small" for="floor-2">2</label>
+                            </div>
+    
+                            <div class="layouts__filter-item-floor">
+                                <input id="floor-3" type="radio" name="floor" value="3">
+                                <label class="text_small" for="floor-3">3</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layouts__filter-btn-wrapper">
+                        <button class="btn layouts__filter-btn layouts__filter-submit" type="submit">Применить</button>
+                        <button class="btn layouts__filter-btn layouts__filter-reset" type="button">Сбросить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

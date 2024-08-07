@@ -1,0 +1,126 @@
+.developer {
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__title {}
+
+    &__partners-title {
+        margin: 0;
+    }
+
+    &__stats {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    &__logo {
+        flex: 0 0 25%;
+    }
+
+    &__logo-img {}
+
+    &__stats-wrapper {
+        flex: 0 0 70%;
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    &__stat-card {}
+
+    &__stat-text {}
+
+    &__descr {}
+
+    &__descr-text {}
+
+    &__partners {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    &__partners-card {
+        flex: 0 0 23%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__partners-card-top {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: start;
+    }
+
+    &__partners-card-logo {
+        max-width: 60%;
+    }
+
+    &__partners-card-title {
+    }
+
+    &__partners-card-bottom {
+        margin-top: auto;
+    }
+
+    &__partners-card-descr {}
+}
+
+.bordered-card {
+    padding: 20px 40px;
+    border: 2px solid $borderColor;
+    border-radius: 30px;
+}
+
+@include media($tablet) {
+    .developer {
+    
+        &__stats {
+            gap: 30px;
+            flex-direction: column;
+        }
+    
+        &__logo {
+            flex: 0 0 25%;
+        }
+    
+        &__stats-wrapper {
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    
+        &__stat-card {
+            flex: 0 0 45%;
+        }
+    
+        &__partners {
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    
+        &__partners-card {
+            flex: 0 0 48%;
+        }
+    }
+
+    .bordered-card {
+        padding: 20px 20px;
+    }
+}
+
+@include media($mobile) {
+    .developer {
+    
+        &__partners-card {
+            flex: 0 0 100%;
+        }
+    }
+}

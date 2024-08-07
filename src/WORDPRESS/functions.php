@@ -1,18 +1,22 @@
 <?
-
-add_action('wp_print_styles', 'add_styles'); // приклеем ф-ю на добавление стилей в хедер
-function add_styles() { // добавление стилей
-	if(is_admin()) return false; // если мы в админке - ничего не делаем
+ // Приклеем ф-ю на добавление стилей в хедер
+add_action('wp_print_styles', 'add_styles');
+// Добавление стилей
+function add_styles() {
+    // Если мы в админке - ничего не делаем
+	if(is_admin()) return false;
 	
 	wp_enqueue_style( 'uikit', 'https://cdn.jsdelivr.net/npm/uikit@3.16.24/dist/css/uikit.min.css' );
 	wp_enqueue_style( 'style', get_template_directory_uri().'/style.css?1043' );
 	wp_enqueue_style( 'custom', get_template_directory_uri().'/css/custom.css?1043');
 }
 
-add_action('wp_footer', 'add_scripts'); // приклеем ф-ю на добавление скриптов в футер
-function add_scripts() { // добавление скриптов
-	
-	if(is_admin()) return false; // если мы в админке - ничего не делаем
+// Приклеем ф-ю на добавление скриптов в футер
+add_action('wp_footer', 'add_scripts');
+// Добавление скриптов
+function add_scripts() {
+	// Если мы в админке - ничего не делаем
+	if(is_admin()) return false;
 	
 	wp_enqueue_script('uikit', 'https://cdn.jsdelivr.net/npm/uikit@3.16.24/dist/js/uikit.min.js','','',true);
 	wp_enqueue_script('uikit-icons', 'https://cdn.jsdelivr.net/npm/uikit@3.16.24/dist/js/uikit-icons.min.js','','',true);
@@ -27,7 +31,7 @@ function add_jquery() {
 
 add_action('init', 'add_jquery');
 
-//Подключение main-script как модуля
+// Подключение main-script как модуля
 add_filter('script_loader_tag', 'add_type_attribute' , 10, 3);
 function add_type_attribute($tag, $handle, $src) {
     // if not your script, do nothing and return original $tag

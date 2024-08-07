@@ -12,7 +12,7 @@ function isWebp() {
 
         webP.onload = webP.onerror = () => callback(webP.height === 2);
         webP.src =
-        'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+            'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
     };
 
     // Добавление класса _webp или _no-webp для HTML
@@ -26,84 +26,84 @@ function isWebp() {
 isWebp();
 
 const InsertPostContents = () => {
-	const headers = [];
-	const indexes = [0];
-	const articleContent = document.querySelector('.post__content');
-	// функция для получения предыдущего header
-	const getPrevHeader = (diff = 0) => {
-	  if ((indexes.length - diff) === 0) {
-		return null;
-	  }
-	  let header = headers[indexes[0]];
-	  for (let i = 1, length = indexes.length - diff; i < length; i++) {
-		header = header.contains[indexes[i]];
-	  }
-	  return header;
-	}
-	// функция для добавления item в headers
-	const addItemToHeaders = (el, diff) => {
-	  let header = headers;
-	  if (diff === 0) {
-		header = indexes.length > 1 ? getPrevHeader(1).contains : header;
-		indexes.length > 1 ? indexes[indexes.length - 1]++ : indexes[0]++;
-	  } else if (diff > 0) {
-		header = getPrevHeader().contains;
-		indexes.push(0);
-	  } else if (diff < 0) {
-		const parentHeader = getPrevHeader(Math.abs(diff) + 1);
-		for (let i = 0; i < Math.abs(diff); i++) {
-		  indexes.pop();
-		}
-		header = parentHeader ? parentHeader.contains : header;
-		parentHeader ? indexes[indexes.length - 1]++ : indexes[0]++;
-	  }
-	  header.push({ el, contains: [] });
-	}
-	// сформируем оглавление страницы для вставки его на страницу
-	let html = '';
-	const createTableOfContents = (items) => {
-	  html += '<ol>';
-	  for (let i = 0, length = items.length; i < length; i++) {
-		const url = `${location.href.split('#')[0]}#${items[i].el.id}`;
-		html += `<li><a href="${url}">${items[i].el.textContent}</a>`;
-		if (items[i].contains.length) {
-		  createTableOfContents(items[i].contains);
-		}
-		html += '</li>';
-	  }
-	  html += '</ol>';
-	}
+    const headers = [];
+    const indexes = [0];
+    const articleContent = document.querySelector('.post__content');
+    // функция для получения предыдущего header
+    const getPrevHeader = (diff = 0) => {
+        if ((indexes.length - diff) === 0) {
+            return null;
+        }
+        let header = headers[indexes[0]];
+        for (let i = 1, length = indexes.length - diff; i < length; i++) {
+            header = header.contains[indexes[i]];
+        }
+        return header;
+    }
+    // функция для добавления item в headers
+    const addItemToHeaders = (el, diff) => {
+        let header = headers;
+        if (diff === 0) {
+            header = indexes.length > 1 ? getPrevHeader(1).contains : header;
+            indexes.length > 1 ? indexes[indexes.length - 1]++ : indexes[0]++;
+        } else if (diff > 0) {
+            header = getPrevHeader().contains;
+            indexes.push(0);
+        } else if (diff < 0) {
+            const parentHeader = getPrevHeader(Math.abs(diff) + 1);
+            for (let i = 0; i < Math.abs(diff); i++) {
+                indexes.pop();
+            }
+            header = parentHeader ? parentHeader.contains : header;
+            parentHeader ? indexes[indexes.length - 1]++ : indexes[0]++;
+        }
+        header.push({ el, contains: [] });
+    }
+    // сформируем оглавление страницы для вставки его на страницу
+    let html = '';
+    const createTableOfContents = (items) => {
+        html += '<ol>';
+        for (let i = 0, length = items.length; i < length; i++) {
+            const url = `${location.href.split('#')[0]}#${items[i].el.id}`;
+            html += `<li><a href="${url}">${items[i].el.textContent}</a>`;
+            if (items[i].contains.length) {
+                createTableOfContents(items[i].contains);
+            }
+            html += '</li>';
+        }
+        html += '</ol>';
+    }
 
-	if(articleContent){
-	  const contentsList = document.querySelector('.post__contents-list');
-	  if(contentsList){
-		// добавим заголовки в headers
-		articleContent.querySelectorAll('h2, h3, h4').forEach((el, index) => {
-			if (!el.id) {
-			el.id = `id-${index}`;
-			}
-			if (!index) {
-			addItemToHeaders(el);
-			return;
-			}
-			const diff = el.tagName.substring(1) - getPrevHeader().el.tagName.substring(1);
-			addItemToHeaders(el, diff);
-		});
+    if (articleContent) {
+        const contentsList = document.querySelector('.post__contents-list');
+        if (contentsList) {
+            // добавим заголовки в headers
+            articleContent.querySelectorAll('h2, h3, h4').forEach((el, index) => {
+                if (!el.id) {
+                    el.id = `id-${index}`;
+                }
+                if (!index) {
+                    addItemToHeaders(el);
+                    return;
+                }
+                const diff = el.tagName.substring(1) - getPrevHeader().el.tagName.substring(1);
+                addItemToHeaders(el, diff);
+            });
 
-		createTableOfContents(headers);
-		contentsList.insertAdjacentHTML('afterbegin', html);
-	  }
-	}
+            createTableOfContents(headers);
+            contentsList.insertAdjacentHTML('afterbegin', html);
+        }
+    }
 }
 
-function CallbackFormInit(){
+function CallbackFormInit() {
     let forms = document.querySelectorAll('form');
 
-    if(forms.length > 0){
-        forms.forEach((form) =>{
+    if (forms.length > 0) {
+        forms.forEach((form) => {
             let phoneInputs = form.querySelectorAll('input[name="phone"]');
 
-            if(phoneInputs.length > 0) {
+            if (phoneInputs.length > 0) {
                 phoneInputs.forEach((phoneInput) => {
                     const phoneMask = new IMask(phoneInput, {
                         mask: "+{7} (000) 000-00-00",
@@ -111,10 +111,10 @@ function CallbackFormInit(){
 
                     phoneInput.addEventListener('input', (event) => {
                         event.preventDefault();
-                
+
                         if (!phoneMask.masked.isComplete) {
                             phoneInput.classList.add("uk-form-danger");
-                        } 
+                        }
                         else {
                             phoneInput.classList.remove("uk-form-danger");
                         }
@@ -122,34 +122,34 @@ function CallbackFormInit(){
 
                     form.addEventListener('submit', (event) => {
                         event.preventDefault();
-                
-                        if (!phoneMask.masked.isComplete){
+
+                        if (!phoneMask.masked.isComplete) {
                             return;
                         }
-						
-						let formData = {};
-						let inputs = form.querySelectorAll('input:not([type="submit"]), textarea');
-						if(inputs.length > 0) {
-							inputs.forEach((input) => {
-								formData[input.getAttribute('name')] = input.value;
-							})
-						}
+
+                        let formData = {};
+                        let inputs = form.querySelectorAll('input:not([type="submit"]), textarea');
+                        if (inputs.length > 0) {
+                            inputs.forEach((input) => {
+                                formData[input.getAttribute('name')] = input.value;
+                            })
+                        }
 
                         let successPopupNode = document.querySelector('#callback-popup__success');
-						UIkit.modal(successPopupNode).show();
+                        UIkit.modal(successPopupNode).show();
 
-						// jQuery.ajax({
-						// 	url: '/wp-admin/admin-ajax.php',
-						// 	method: 'post',
-						// 	data: {
-						// 		action: 'sendForm',
-						// 		data: JSON.stringify(formData)
-						// 	},
-						// 	success: function(data){
-						// 		let successPopupNode = document.querySelector('#success-popup');
-						// 		UIkit.modal(successPopupNode).show();
-						// 	}
-						// });
+                        // jQuery.ajax({
+                        // 	url: '/wp-admin/admin-ajax.php',
+                        // 	method: 'post',
+                        // 	data: {
+                        // 		action: 'sendForm',
+                        // 		data: JSON.stringify(formData)
+                        // 	},
+                        // 	success: function(data){
+                        // 		let successPopupNode = document.querySelector('#success-popup');
+                        // 		UIkit.modal(successPopupNode).show();
+                        // 	}
+                        // });
                     })
                 })
             }
@@ -157,30 +157,30 @@ function CallbackFormInit(){
     };
 }
 
-function LoadMapOnScroll(){
+function LoadMapOnScroll() {
     let isMapAppend = false;
-	let mapNode = document.querySelector('.map');
-	if(mapNode) {
-		document.addEventListener('scroll', (event) => {
-			if(!isMapAppend) {
-				if(window.scrollY > 1000) {
-					let script = document.createElement('script');
-					
-					script.src = 'https://nalogsib.ru/wp-content/themes/NalogSib/js/map.js';
-					script.type = 'text/javascript';
-					
-					mapNode.append(script);
-					isMapAppend = true;
-				}
-			}
-		});
-	}
+    let mapNode = document.querySelector('.map');
+    if (mapNode) {
+        document.addEventListener('scroll', (event) => {
+            if (!isMapAppend) {
+                if (window.scrollY > 1000) {
+                    let script = document.createElement('script');
+
+                    script.src = 'https://nalogsib.ru/wp-content/themes/NalogSib/js/map.js';
+                    script.type = 'text/javascript';
+
+                    mapNode.append(script);
+                    isMapAppend = true;
+                }
+            }
+        });
+    }
 }
 
-function InitCenteredSliders(){
+function InitCenteredSliders() {
     let centeredSliders = document.querySelectorAll('.slider_centered');
-    if(centeredSliders.length > 0){
-        centeredSliders.forEach((centeredSlider) =>{
+    if (centeredSliders.length > 0) {
+        centeredSliders.forEach((centeredSlider) => {
             UIkit.slider(centeredSlider, {
                 center: true
             });
@@ -194,137 +194,259 @@ function InitCenteredSliders(){
     };
 }
 
-function CheckCheckBox(){
-	let checks = document.querySelectorAll('.checkbox-form');
-	checks.forEach((checkbox) =>{
-		let form = checkbox.closest('form');
-		let button = form.querySelector('button[type="submit"]');
-		if (form && button)
-		{
-			button.classList.toggle('button__noactive');
-			checkbox.addEventListener('click', (event) => {
-				button.classList.toggle('button__noactive');
-			});
-		}
-	});
+function CheckCheckBox() {
+    let checks = document.querySelectorAll('.checkbox-form');
+    checks.forEach((checkbox) => {
+        let form = checkbox.closest('form');
+        let button = form.querySelector('button[type="submit"]');
+        if (form && button) {
+            button.classList.toggle('button__noactive');
+            checkbox.addEventListener('click', (event) => {
+                button.classList.toggle('button__noactive');
+            });
+        }
+    });
 }
 
 function AddRangeSliders() {
-	let slider_price = document.querySelector('.hypothec__input-price');
-	let slider_contribution = document.querySelector('.hypothec__input-contribution');
-	let slider_term = document.querySelector('.hypothec__input-term');
+    let slider_price = document.querySelector('.hypothec__input-price');
+    let slider_contribution = document.querySelector('.hypothec__input-contribution');
+    let slider_term = document.querySelector('.hypothec__input-term');
 
     let text_price = document.querySelector(".hypothec__input-text-price");
-	let text_contribution = document.querySelector(".hypothec__input-text-contribution");
-	let text_term = document.querySelector(".hypothec__input-text-term");
-	let text_percent = document.querySelector(".hypothec__input-text-percent");
+    let text_contribution = document.querySelector(".hypothec__input-text-contribution");
+    let text_term = document.querySelector(".hypothec__input-text-term");
+    let text_percent = document.querySelector(".hypothec__input-text-percent");
 
-    if(slider_price && slider_contribution && slider_term && text_price && text_contribution && text_term && text_percent) {
+    if (slider_price && slider_contribution && slider_term && text_price && text_contribution && text_term && text_percent) {
         let ui_slider_price = noUiSlider.create(slider_price, {
             start: 4480000,
             connect: true,
             range: {
-              'min': 4480000,
-              'max': 8194000
+                'min': 4480000,
+                'max': 8194000
             },
             step: 1
-          });
-          let ui_slider_contribution = noUiSlider.create(slider_contribution, {
+        });
+        let ui_slider_contribution = noUiSlider.create(slider_contribution, {
             start: 15,
             connect: true,
             range: {
-              'min': 15,
-              'max': 100
+                'min': 15,
+                'max': 100
             },
             step: 1
-          });
-          let ui_slider_term = noUiSlider.create(slider_term, {
+        });
+        let ui_slider_term = noUiSlider.create(slider_term, {
             start: 10,
             connect: true,
             range: {
-              'min': 1,
-              'max': 30
+                'min': 1,
+                'max': 30
             },
             step: 1
-          });
-          
-          let price;
-          text_price.addEventListener("change", function() {
+        });
+
+        let price;
+        text_price.addEventListener("change", function () {
             ui_slider_price.set(parseFloat(this.value));
-          });
-        
-          text_contribution.addEventListener("change", function() {
+        });
+
+        text_contribution.addEventListener("change", function () {
             ui_slider_contribution.set(parseFloat(this.value));
-          });
-        
-          text_term.addEventListener("change", function() {
+        });
+
+        text_term.addEventListener("change", function () {
             ui_slider_term.set(parseInt(this.value));
-          });
-      
-          ui_slider_price.on('update', function(values, handle) {
-              text_price.value = Math.round(values[handle]);
-              price = Math.round(values[handle]);
-          });
-          
-          ui_slider_contribution.on('update', function(values, handle) {
-      
-              let contributionPercentage = values[handle]; 
-              let contributionPrice = (price * contributionPercentage) / 100; // Вычисляем цену, которая является процентом первоначального взноса от цены
-              text_contribution.value = contributionPrice;
-              text_percent.value = Math.round(values[handle]) + "%";
-          });
-      
-          ui_slider_term.on('update', function(values, handle) {
-          text_term.value = Math.round(values[handle]);
-          });
-      
-      
-              // Функция для пересчета ежемесячного платежа и его обновления
-          function updateMonthlyPayment(bank) {
-              const percent = parseFloat(bank.querySelector('.hypothec__bank-percent').textContent);
-              const monthlyRate = percent / 12 / 100;
-              
-              const loanAmount = ui_slider_price.get() - ((ui_slider_price.get() * ui_slider_contribution.get()) / 100);
-              const term = ui_slider_term.get() * 12;
-              const rate =  (1 + monthlyRate) ** term;
-      
-              const monthlyPayment = (loanAmount * monthlyRate * rate) / (rate - 1)//(1 - Math.pow(1 + monthlyRate, term));
-              const formattedPayment = monthlyPayment.toFixed(0);
-      
-              bank.querySelector('.hypothec__bank-price').textContent = Math.round(formattedPayment) + " руб. /мес";
-          }
-      
-          // Получаем все блоки с классом hypothec__bank
-          const banks = document.querySelectorAll('.hypothec__bank');
-      
-          // Обработчик события для ползунка цены
-          ui_slider_price.on('update', () => {
-              banks.forEach(bank => {
-                  updateMonthlyPayment(bank);
-              });
-          });
-      
-          // Обработчик события для ползунка первоначального взноса
-          ui_slider_contribution.on('update', () => {
-              banks.forEach(bank => {
-                  updateMonthlyPayment(bank);
-              });
-          });
-      
-          // Обработчик события для поля ввода срока кредита
-          ui_slider_term.on('update', () => {
-              banks.forEach(bank => {
-                  updateMonthlyPayment(bank);
-              });
-          });
+        });
+
+        ui_slider_price.on('update', function (values, handle) {
+            text_price.value = Math.round(values[handle]);
+            price = Math.round(values[handle]);
+        });
+
+        ui_slider_contribution.on('update', function (values, handle) {
+
+            let contributionPercentage = values[handle];
+            let contributionPrice = (price * contributionPercentage) / 100; // Вычисляем цену, которая является процентом первоначального взноса от цены
+            text_contribution.value = contributionPrice;
+            text_percent.value = Math.round(values[handle]) + "%";
+        });
+
+        ui_slider_term.on('update', function (values, handle) {
+            text_term.value = Math.round(values[handle]);
+        });
+
+
+        // Функция для пересчета ежемесячного платежа и его обновления
+        function updateMonthlyPayment(bank) {
+            const percent = parseFloat(bank.querySelector('.hypothec__bank-percent').textContent);
+            const monthlyRate = percent / 12 / 100;
+
+            const loanAmount = ui_slider_price.get() - ((ui_slider_price.get() * ui_slider_contribution.get()) / 100);
+            const term = ui_slider_term.get() * 12;
+            const rate = (1 + monthlyRate) ** term;
+
+            const monthlyPayment = (loanAmount * monthlyRate * rate) / (rate - 1)//(1 - Math.pow(1 + monthlyRate, term));
+            const formattedPayment = monthlyPayment.toFixed(0);
+
+            bank.querySelector('.hypothec__bank-price').textContent = Math.round(formattedPayment) + " руб. /мес";
+        }
+
+        // Получаем все блоки с классом hypothec__bank
+        const banks = document.querySelectorAll('.hypothec__bank');
+
+        // Обработчик события для ползунка цены
+        ui_slider_price.on('update', () => {
+            banks.forEach(bank => {
+                updateMonthlyPayment(bank);
+            });
+        });
+
+        // Обработчик события для ползунка первоначального взноса
+        ui_slider_contribution.on('update', () => {
+            banks.forEach(bank => {
+                updateMonthlyPayment(bank);
+            });
+        });
+
+        // Обработчик события для поля ввода срока кредита
+        ui_slider_term.on('update', () => {
+            banks.forEach(bank => {
+                updateMonthlyPayment(bank);
+            });
+        });
+    }
+}
+
+function InitFilters() {
+    let filterForm = document.querySelector('.layouts__filter-form');
+    if(!filterForm) return;
+
+    let priceSlider = filterForm.querySelector('.layouts__filter-input-range_price');
+    let areaSlider = filterForm.querySelector('.layouts__filter-input-range_area');
+
+    let priceTextFrom = filterForm.querySelector("#price-filter-from");
+    let priceTextTo = filterForm.querySelector("#price-filter-to");
+
+    let areaTextFrom = filterForm.querySelector("#area-filter-from");
+    let areaTextTo = filterForm.querySelector("#area-filter-to");
+	
+	let minMaxs = undefined;
+
+    minMaxs = {minPrice: 1984000, maxPrice: 7984000,minArea: 30.2, maxArea: 90.2}
+	
+    if (priceSlider && areaSlider) {
+        let uiPriceSlider = noUiSlider.create(priceSlider, {
+            start: [minMaxs.minPrice, minMaxs.maxPrice],
+            connect: true,
+            range: {
+                'min': minMaxs.minPrice,
+                'max': minMaxs.maxPrice,
+            },
+            step: 1000,
+        });
+
+        let uiAreaSlider = noUiSlider.create(areaSlider, {
+            start: [minMaxs.minArea, minMaxs.maxArea],
+            connect: true,
+            range: {
+                'min': minMaxs.minArea,
+                'max': minMaxs.maxArea,
+            },
+            step: 0.1,
+        });
+
+        let priceFrom;
+        let priceTo;
+        let areaFrom;
+        let areaTo;
+
+        uiPriceSlider.on('update', function (values, handle) {
+            priceFrom = Math.round(values[0]);
+            priceTo = Math.round(values[1]);
+
+            priceTextFrom.value = priceFrom
+            priceTextTo.value = priceTo
+        });
+
+        uiAreaSlider.on('update', function (values, handle) {
+            areaFrom = Math.round(values[0] * 10) / 10;
+            areaTo = Math.round(values[1] * 10) / 10;
+
+            areaTextFrom.value = areaFrom
+            areaTextTo.value = areaTo
+        });
+
+        filterForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            let formData = {};
+            let inputs = filterForm.querySelectorAll('input[name="floor"]:checked');
+            if (inputs.length > 0) {
+                inputs.forEach((input) => {
+                    formData[input.getAttribute('name')] = input.value;
+                })
+            }
+
+            formData.priceFrom = priceFrom;
+            formData.priceTo = priceTo;
+            formData.areaFrom = areaFrom;
+            formData.areaTo = areaTo;
+			formData.floor = Math.round(formData.floor);
+
+
+            jQuery.ajax({
+            	url: '/wp-admin/admin-ajax.php',
+            	method: 'post',
+            	data: {
+            		action: 'layoutFilter',
+            		data: JSON.stringify(formData)
+            	},
+            	success: function(data){
+                    if (data) {
+                        $(".layouts__content .layouts__card").remove();
+                        $(".layouts__content").prepend(data);
+                    }
+            	}
+            });
+        });
+		
+		let resetBtn = document.querySelector('.layouts__filter-reset');
+		if(resetBtn) {
+			resetBtn.addEventListener('click', (event) => {
+				let formData = {};
+				formData.priceFrom = 0;
+				formData.priceTo = 9999999;
+				formData.areaFrom = 0;
+				formData.areaTo = 9999999;
+				formData.floor = -1;
+				
+				jQuery.ajax({
+            	url: '/wp-admin/admin-ajax.php',
+            	method: 'post',
+            	data: {
+            		action: 'layoutFilter',
+            		data: JSON.stringify(formData)
+            	},
+            	success: function(data){
+                    if (data) {
+                        $(".layouts__content .layouts__card").remove();
+                        $(".layouts__content").prepend(data);
+                    }
+            	}
+            });
+			});
+		}
     }
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
     CallbackFormInit();
     InitCenteredSliders();
-	CheckCheckBox();
-	AddRangeSliders();
+    CheckCheckBox();
+    AddRangeSliders();
+    InitFilters();
     // particlesJS.load('particles-slider', 'static/ParticlesJSON/GreenHexagons.json');
 
     // Содержание статьи по заголовкам
@@ -333,7 +455,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Прогрузка карты при скролле
     // LoadMapOnScroll()
 
-    if(isTablet) {
+    if (isTablet) {
         const burgerNode = document.querySelector('.burger');
         new BurgerMenu(burgerNode);
     }

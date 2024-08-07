@@ -1,0 +1,141 @@
+.layouts {
+
+    &__container {}
+
+    &__title {}
+
+    &__filter {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-shadow: 0px 0px 32.5px 0px #0000000E;
+        padding: 25px;
+        border-radius: 20px;
+    }
+
+    &__filter-title {}
+
+    &__filter-form {
+        input {
+            height: 55px;
+        }
+    }
+
+    &__filter-wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: start;
+        gap: 20px;
+    }
+
+    &__filter-item-wrapper {
+        display: flex;
+        flex-direction: column;
+        max-width: 25%;
+        gap: 15px;
+    }
+
+    &__filter-floor-wrapper {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__filter-item-title {}
+
+    &__filter-input-text {
+        width: 45%;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+
+        &_price {}
+
+        &_area {}
+    }
+
+    &__filter-input-range {
+
+        &_price {}
+
+        &_area {}
+    }
+
+    &__filter-item-floor {
+        display: inline-block;
+
+        input[type=radio] {
+            display: none;
+
+            &:checked + label {
+                background: #6C6C6C;
+                color: $textColorLight;
+            }
+        }
+
+        label {
+            transition: .3s;
+            display: inline-block;
+            cursor: pointer;
+            padding: 15px 25px;
+            border-radius: 5px;
+            user-select: none;
+            background: #F2F1F0;
+
+            &:hover {
+                background: #6C6C6C;
+                color: $textColorLight;
+            }
+        }
+    }
+
+    &__filter-btn-wrapper {
+        display: flex;
+        gap: 10px;
+        align-self: center;
+        margin-top: 20px;
+    }
+
+    &__filter-btn {
+        color: #B8914D;
+        border: 1px solid #B8914D;
+        flex-shrink: 0;
+
+        &:hover {
+            background: #B8914D;
+            color: #FFFFFF;
+        }
+    }
+
+    &__filter-submit {}
+
+    &__filter-input-wrapper {
+        display: flex;
+        justify-content: space-between;
+        background: #F2F1F0;
+    }
+}
+
+@include media($tablet) {
+    .layouts {
+        &__filter-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .layouts__filter-floor-wrapper {
+            justify-content: center;
+        }
+    }
+}
+
+@include media($mobile) {
+    .layouts {
+        .layouts__filter-item-wrapper {
+            width: 100%;
+            gap: 15px;
+        }
+    }
+}
